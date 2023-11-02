@@ -36,6 +36,17 @@ jobs:
       run: |
         poetry run pytest --cov=pyproject.toml
       working-directory: ${{ github.workspace }}/refactorNCI
+      
+    - name: Generate HTML Code Coverage Report
+      run: |
+        poetry run coverage html
+      working-directory: ${{ github.workspace }}/refactorNCI
+
+    - name: Upload HTML Code Coverage Report
+      uses: actions/upload-artifact@v2
+      with:
+        name: code-coverage
+        path: ${{ github.workspace }}/refactorNCI
 
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v3
