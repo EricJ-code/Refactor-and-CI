@@ -27,7 +27,11 @@ jobs:
     - name: Run Flake8
       run: poetry run flake8 || true
       working-directory: ${{ github.workspace }}/refactorNCI
-
+      
+    - name: Install pytest
+      run: poetry add --dev pytest
+      working-directory: ${{ github.workspace }}/refactorNCI
+      
     - name: Run Tests and Generate Code Coverage
       run: |
         poetry run pytest --cov=pyproject.toml
