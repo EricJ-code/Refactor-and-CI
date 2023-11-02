@@ -31,7 +31,7 @@ jobs:
     - name: Run Tests and Generate Code Coverage
       run: |
         poetry run pytest --cov=pyproject.toml
-      working-directory: ${{ github.workspace }}
+      working-directory: ${{ github.workspace }}/refactorNCI
 
     - name: Upload Code Coverage
       uses: actions/upload-artifact@v2
