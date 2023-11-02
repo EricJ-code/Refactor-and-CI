@@ -45,6 +45,7 @@ jobs:
           echo "No coverage data to report"
         fi
       working-directory: ${{ github.workspace }}/refactorNCI
+      continue-on-error: true  # This step will continue even if it fails
 
     - name: Upload HTML Code Coverage Report
       if: always()  # This step will run even if the previous step fails
