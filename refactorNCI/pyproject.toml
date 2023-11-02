@@ -6,7 +6,7 @@ authors = ["Eric J <51121192+EricJ-code@users.noreply.github.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^6.2"
 flake8 = "^6.1.0"
 
 
