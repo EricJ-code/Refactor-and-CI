@@ -22,7 +22,7 @@ jobs:
       run: |
         pip install poetry
         poetry install
-      working-directory: ${{ github.workspace }}
+      working-directory: ${{ github.workspace }}/refactorNCI
 
     - name: Run Flake8
       run: poetry run flake8
