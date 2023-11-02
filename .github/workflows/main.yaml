@@ -23,6 +23,12 @@ jobs:
         pip install poetry
         poetry install
       working-directory: ${{ github.workspace }}/refactorNCI
+      
+    - name: Install Dev Dependencies
+      run: |
+        cd refactorNCI
+        poetry install --no-root --no-interaction --no-ansi --dev
+      working-directory: ${{ github.workspace }}/refactorNCI
 
     - name: Run Flake8
       run: poetry run flake8 || true
