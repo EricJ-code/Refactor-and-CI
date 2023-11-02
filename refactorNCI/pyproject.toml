@@ -6,9 +6,11 @@ authors = ["Eric J <51121192+EricJ-code@users.noreply.github.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^6.2"
+python = "^3.10"
 flake8 = "^6.1.0"
 
+[tool.poetry.dev-dependencies]
+pytest = "^6.2"
 
 [build-system]
 requires = ["poetry-core"]
