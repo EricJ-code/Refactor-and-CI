@@ -224,9 +224,9 @@ def test_add():
     #Test your implementation here
 
     # This test failed because dn is not defined
-    # for node in dL: 
-    #     print(node.get_element() == dn.__next__().get_element())
-    #     print(dn)
+    for node in dL: 
+        print(node.get_element() == dn.__next__().get_element())
+        print(dn)
 
 
     # dL
