@@ -37,8 +37,7 @@ jobs:
         poetry run pytest --cov=pyproject.toml
       working-directory: ${{ github.workspace }}/refactorNCI
 
-    - name: Upload Code Coverage
-      uses: actions/upload-artifact@v2
-      with:
-        name: code-coverage
-        path: ${{ github.workspace }}  # Adjust the path to your coverage report folder
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v3
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
