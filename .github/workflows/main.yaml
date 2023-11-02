@@ -34,7 +34,7 @@ jobs:
       
     - name: Run Tests and Generate Code Coverage
       run: |
-        poetry run pytest --cov=__init__.py
+        poetry run pytest --cov=refactorNCI/tests/__init__.py
       working-directory: ${{ github.workspace }}/refactorNCI
       
     - name: Generate HTML Code Coverage Report
