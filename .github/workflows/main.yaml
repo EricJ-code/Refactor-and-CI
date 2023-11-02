@@ -26,12 +26,12 @@ jobs:
 
     - name: Run Flake8
       run: poetry run flake8
-      working-directory: ${{ github.workspace }}
+      working-directory: ${{ github.workspace }}/refactorNCI
 
     - name: Run Tests and Generate Code Coverage
       run: |
         poetry run pytest --cov=my_module  # Replace 'my_module' with your module name
-      working-directory: ${{ github.workspace }}
+      working-directory: ${{ github.workspace }}/refactorNCI
 
     - name: Upload Code Coverage
       uses: actions/upload-artifact@v2
