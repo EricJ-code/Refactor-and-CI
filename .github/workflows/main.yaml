@@ -16,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.x  # Specify the Python version you want to use
+        python-version: 3.10
 
     - name: Install Poetry
       run: |
@@ -29,12 +29,12 @@ jobs:
       working-directory: ${{ github.workspace }}/refactorNCI
       
     - name: Install pytest
-      run: poetry add --dev pytest
+      run: poetry add --dev pytest pytest-cov
       working-directory: ${{ github.workspace }}/refactorNCI
       
     - name: Run Tests and Generate Code Coverage
       run: |
-        poetry run pytest --cov = pyproject.toml
+        poetry run pytest --cov=pyproject.toml
       working-directory: ${{ github.workspace }}/refactorNCI
 
     - name: Upload Code Coverage
