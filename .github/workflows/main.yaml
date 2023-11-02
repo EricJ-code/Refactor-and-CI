@@ -37,12 +37,22 @@ jobs:
         poetry run pytest --cov=pyproject.toml
       working-directory: ${{ github.workspace }}/refactorNCI
       
-    - name: Debug .coverage File
+    - name: Generate HTML Code Coverage Report
       run: |
-        cat .coverage
+        if [ -f .coverage ]; then
+          poetry run coverage html
+        else
+          echo "No coverage data to report"
+        fi
       working-directory: ${{ github.workspace }}/refactorNCI
 
-
+    - name: Upload HTML Code Coverage Report
+      if: always()  # This step will run even if the previous step fails
+      uses: actions/upload-artifact@v2
+      with:
+        name: code-coverage
+        path: ${{ github.workspace }}/refactorNCI
+        
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v3
       env:
